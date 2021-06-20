@@ -6,7 +6,13 @@
     "lint": "eslint ./src/**/*.ts && tslint ./src/**/*.ts",
     "lint:fix": "eslint --fix ./src/**/*.ts && tslint --fix ./src/**/*.ts",
     "test": "rimraf spec/built && tsc -p spec && istanbul cover node_modules/jasmine/bin/jasmine.js -x \"**/*.spec.js\"",
-    ".copy-dist": "cpx package.json dist/ && cpx LICENSE dist/ && cpx README.md dist/"
+    "versions:installed": "npm list --depth=0",
+
+    ".copy-dist": "cpx package.json dist/ && cpx LICENSE dist/ && cpx README.md dist/",
+    ".remapcov": "cat coverage/coverage.json | ./node_modules/.bin/remap-istanbul > coverage/coverage-remap.json && mv -f coverage/coverage-remap.json coverage/coverage.json",
+    ".remapcov:win": "type coverage\\coverage.json | .\\node_modules\\.bin\\remap-istanbul > coverage\\coverage-remap.json && del coverage\\coverage.json && ren coverage\\coverage-remap.json coverage.json",
+
+    "__outdated__": "npm outdated"
   },
   "devDependencies": {
     "@types/jasmine": "^3.3.13",
