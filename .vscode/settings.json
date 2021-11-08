@@ -17,5 +17,8 @@
   },
   "[javascript]": {
     "files.insertFinalNewline": true
+  },
+  "[typescript]": {
+    "files.insertFinalNewline": true
   }
 }
