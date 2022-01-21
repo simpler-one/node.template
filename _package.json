@@ -1,6 +1,8 @@
 {
+  "___name-description__": "...",
   "main": "index.js",
   "types": "index.d.ts",
+  "type": "module",
   "scripts": {
     "build": "tsc --build --clean && tsc --build && npm run .copy-dist",
     "lint": "eslint src/**/*.ts && tslint src/**/*.ts && npm run .lint-md",
@@ -34,4 +36,5 @@
   },
   "author": "Hiroaki Kobayashi",
   "license": "MIT",
+  "___repository-__": "...",
 }
